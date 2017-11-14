@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <title>Find something.</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<style type="text/css">
+  .button {
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+</style>
+<div align="center">
+<form action="" method="GET">
+  <p><input type="text" name="secret" placeholder="What are you looking for?"></p>
+  <p><input type="submit" class="button" value="Find!"></p>
+</form>
+{% if find_secret !=None and find_secret != '' and find_secret != "flag" and find_secret != "1'or'1'='1" %}
+{{find_secret}} was not found. 
+{% endif %}
+{% if find_secret == "1'or'1'='1" %}
+No sqli~
+{% endif %}
+{% if find_secret == "flag" %}
+Don't daydream. This is not a simple challenge, come on.
+{% endif %}
+</div>
+<div class='stage'>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <div class='band'></div>
+  <div class='factory'>
+    <div class='magic'></div>
+    <div class='screen'></div>
+  </div>
+</div> 
+</body>
+</html>
